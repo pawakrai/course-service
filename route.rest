@@ -1,0 +1,121 @@
+### Departments
+### Get all departments
+GET http://localhost:5000/api/departments
+
+### Get one department
+GET http://localhost:5000/api/departments/66dd11e82fa774e157e63d7f
+
+### Create a department
+POST http://localhost:5000/api/departments
+Content-Type: application/json
+
+{
+    "departmentName": "Sofware Engineering",
+    "departmentDescription": "Department responsible for software engineering courses."
+}
+
+### Update a department
+PATCH http://localhost:5000/api/departments/66dd11e82fa774e157e63d7f
+Content-Type: application/json
+
+{
+    "departmentName": "Computer Science and Engineering",
+    "departmentDescription": "Department responsible for computer science and engineering courses."
+}
+
+### Delete a department
+DELETE http://localhost:5000/api/departments/66dd191addbfa4f6df24bb52
+
+### Courses
+### Get all courses
+GET http://localhost:5000/api/courses
+
+### Get one course
+GET http://localhost:5000/api/courses/66dd1a15ddbfa4f6df24bb60
+
+### Create a course
+POST http://localhost:5000/api/courses
+Content-Type: application/json
+
+{
+    "courseName": "Master of Science: Software Engineering (SE)",
+    "courseDescription": "Graduate program focusing on software engineering principles.",
+    "departmentId": "66dd11e82fa774e157e63d7f",
+    "subjects": [
+        {
+            "subjectId": "66dd0fc7eceda8a7a92cc9a4",
+            "mandatory": true,
+            "credits": 3
+        },
+        {
+            "subjectId": "66dd117c2fa774e157e63d71",
+            "mandatory": false,
+            "credits": 3
+        }
+    ],
+    "graduationRequirements": {
+        "minimumCredits": 120,
+        "minimumGPA": 2.0,
+        "maximumDuration": "4 years"
+    }
+}
+
+### Update a course
+PATCH http://localhost:5000/api/courses/66dd1a15ddbfa4f6df24bb60
+Content-Type: application/json
+
+{
+    "courseName": "Graduate program focusing on software engineering principles.",
+    "subjects": [
+        {
+            "subjectId": "66dd0fc7eceda8a7a92cc9a4",
+            "mandatory": true,
+            "credits": 3
+        },
+        {
+            "subjectId": "66dd117c2fa774e157e63d71",
+            "mandatory": false,
+            "credits": 3
+        },
+        {
+            "subjectId": "66dd114a2fa774e157e63d6f",
+            "mandatory": true,
+            "credits": 3
+        }
+    ]
+}
+
+### Delete a course
+DELETE http://localhost:5000/api/courses/66dd1a15ddbfa4f6df24bb60
+
+### Subjects
+### Get all subjects
+GET http://localhost:5000/api/subjects
+
+### Get one subject by subjectId
+GET http://localhost:5000/api/subjects/2110521
+
+### Create a subject
+POST http://localhost:5000/api/subjects
+Content-Type: application/json
+
+{
+    "subjectId": "2110521",
+    "subjectName": "SOFTWARE ARCHITECTURES",
+    "subjectDescription": "Principles of software architectures; practical methods in software architectures using scenario-based analysis, heuristic, and formal approaches; architectural styles; architectural description language; software architectural analysis and design; software architectures specification tools; software architecture-based testing; use of software architectures in the software development process.",
+    "credits": 3
+}
+
+### Update a subject by subjectId
+PATCH http://localhost:5000/api/subjects/2110634
+Content-Type: application/json
+
+{
+    "subjectId": "2110634",
+    "subjectName": "SOFTWARE DESIGN AND DEVELOPMENT",
+    "subjectDescription": "Basic concepts of design, design quality, design principles, architectural design, architectural styles, detailed design, integrated development environment.",
+    "credits": 3
+}
+
+### Delete a subject by subjectId
+DELETE http://localhost:5000/api/subjects/2110634
